@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Company">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse_javaEE/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="TestNG.libraryclasspath">
+        <pathelement location="C:/Users/Administrator/.p2/pool/plugins/org.testng_6.14.2.r201802161450.jar"/>
+        <pathelement location="C:/Users/Administrator/.p2/pool/plugins/com.beust.jcommander_1.72.0.jar"/>
+        <pathelement location="C:/Users/Administrator/.p2/pool/plugins/org.apache-extras.beanshell.bsh_2.0.0.b6.jar"/>
+        <pathelement location="C:/Users/Administrator/.p2/pool/plugins/org.yaml.snakeyaml_1.17.0.jar"/>
+    </path>
+    <path id="Company.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="src/myStudy.file.jar"/>
+        <pathelement location="src/sikulixapi (1).jar"/>
+        <pathelement location="src/selenium-server-standalone-3.141.59.jar"/>
+        <path refid="TestNG.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Company.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="BA">
+        <java classname="lidai.sh.e.BA" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="BoxLayoutDemo">
+        <java classname="awtSwing.layout.BoxLayoutDemo" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="GridBagLayoutDemo">
+        <java classname="awtSwing.layout.GridBagLayoutDemo" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="Hb">
+        <java classname="excel.Hb" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="JLabelDemo">
+        <java classname="awtSwing.lables.JLabelDemo" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="Login">
+        <java classname="Consumer1215.Login" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="T (1)">
+        <java classname="test.T" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="Test (4)">
+        <java classname="test.Test" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="Test (5)">
+        <java classname="base.Test" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="Up">
+        <java classname="jira.Up" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+    <target name="XB_A">
+        <java classname="lidai.sh.a.xb.XB_A" failonerror="true" fork="yes">
+            <classpath refid="Company.classpath"/>
+        </java>
+    </target>
+</project>
